@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\
 Hospital_Panel
 none
 false
 DEBUG;TRACE
-c:\Users\Daniel\source\repos\Hospital\Hospital_Panel\App.xaml
-1219584333
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\App.xaml
+2-295255520
 
-61512910735
-13-1310406943
-MainWindow.xaml;
+61702066640
+13-1505183044
+AddDoctor.xaml;MainWindow.xaml;
 
-True
+False
 

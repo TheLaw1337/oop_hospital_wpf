@@ -17,7 +17,7 @@
             Other operations:
         </TextBlock>
         <StackPanel HorizontalAlignment="Left" Margin="75,150,0,115">
-            <Button Width="150" Height="30">Doctor</Button>
+            <Button Width="150" Height="30" Click="AddDoctor_Click">Doctor</Button>
             <Button Width="150" Height="30">Nurse</Button>
             <Button Width="150" Height="30">Admin</Button>
         </StackPanel>
