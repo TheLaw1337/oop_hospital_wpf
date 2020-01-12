@@ -6,15 +6,16 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Hospital_Panel"
         mc:Ignorable="d"
-        Title="NewShift" Height="459" Width="800">
+        Title="NewShift" Height="370.5" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Margin="0,1,0,370">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,0,0,0" Height="52" Width="183">
             Add shift
         </TextBlock>
-        <Label Content="_Worker:" Target="{Binding ElementName=cb_WorkersList}" Margin="41,64,61,305" />
-        <ComboBox Name="cb_WorkersList" Margin="41,104,61,274">
-            
+        <Label Content="_Worker:" Target="{Binding ElementName=cb_WorkersList}" Margin="41,71,61,227" />
+        <ComboBox Name="cb_WorkersList" Margin="41,117,61,0" Height="35" VerticalAlignment="Top">
+
         </ComboBox>
-        <DatePicker Margin="41,150,61,223" DisplayDateStart="{x:Static sys:DateTime.Today}"></DatePicker>
+        <DatePicker Margin="41,173,61,122" DisplayDateStart="{x:Static sys:DateTime.Today}"></DatePicker>
+        <Button Width="150" Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30"  Click="Button_Click" >Save</Button>
     </Grid>
 </Window>

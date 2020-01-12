@@ -38,12 +38,19 @@ namespace Hospital_Panel
             foreach (Pracownik record in list.ListOfWorkers)
             {
                 if (record.Function == "Doctor" || record.Function == "Nurse")
-                text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
-                cb_WorkersList.Items.Add(text);
+                {
+                    text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
+                    cb_WorkersList.Items.Add(text);
+                }
             }
 
             //ListBox.ItemsSource = itemsList;
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
