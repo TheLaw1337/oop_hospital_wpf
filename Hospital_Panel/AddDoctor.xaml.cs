@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Szpital_Pracownicy;
 
 namespace Hospital_Panel
 {
@@ -19,9 +20,21 @@ namespace Hospital_Panel
     /// </summary>
     public partial class AddDoctor : Window
     {
+        MainWindow mw = new MainWindow();
+        static ID_Operations id_ops = new ID_Operations("NR_Doc.txt");
+        static string path = "NR_Doc.txt";
         public AddDoctor()
         {
             InitializeComponent();
+        }
+
+        private void SaveNewDoctor(object sender, RoutedEventArgs e)
+        {
+            Pracownik p = new Doctor(txtSurname.Text, txtName.Text, long.Parse(txtPesel.Text), cb_Spec.Text, int.Parse(txtPWZ.Text), passwordBox.Password);
+            p.Number = id_ops.NextID(path);
+            p.No_num = $"Doc. {p.Number.ToString()}";
+            mw.Add(p);
+            this.Close();
         }
     }
 }

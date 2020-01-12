@@ -16,9 +16,9 @@
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
             <TextBox Name="txtName" Margin="0,0,10,0"/>
             <Label Content="_PESEL:" Target="{Binding ElementName=txtPesel}" />
-            <TextBox Name="txtPesel" Margin="0,0,10,0"/>
+            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0"/>
             <Label Content="_PWZ Number:" Target="{Binding ElementName=txtPWZ}" />
-            <TextBox Name="txtPWZ" Margin="0,0,10,0"/>
+            <TextBox Name="txtPWZ" MaxLength="7" Margin="0,0,10,0"/>
             <Label Content="_Specialty:" Target="{Binding ElementName=cb_Spec}" />
             <ComboBox Name="cb_Spec" Height="30" Margin="0,0,10,0">
                 <ComboBoxItem Content="Kardiolog"></ComboBoxItem>
@@ -28,7 +28,7 @@
             </ComboBox>
             <Label Content="Password:" Target="{Binding ElementName=passwordBox}"/>
             <PasswordBox x:Name="passwordBox"  Margin="0,0,10,0"/>
-            <Button Width="150" Height="30" Margin="20">Save</Button>
+            <Button Width="150" Height="30" Margin="20" Click="SaveNewDoctor">Save</Button>
         </StackPanel>
 
     </Grid>

@@ -23,7 +23,7 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Margin="476,150,0,115">
             <Button Width="150" Height="30">Shifts</Button>
-            <Button Width="150" Height="30">Show Workers</Button>
+            <Button Width="150" Height="30" Click="ShowWorkers_Click">Show Workers</Button>
         </StackPanel>
     </Grid>
 </Window>
