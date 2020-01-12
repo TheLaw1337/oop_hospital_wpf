@@ -38,6 +38,18 @@ namespace Hospital_Panel
             nd.Show();
         }
 
+        private void AddNurse_Click(object sender, RoutedEventArgs e)
+        {
+            AddNurse nn = new AddNurse();
+            nn.Show();
+        }
+
+        private void AddAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            AddAdmin aa = new AddAdmin();
+            aa.Show();
+        }
+
         private void ShowWorkers_Click(object sender, RoutedEventArgs e)
         {
             ListWorkers lw = new ListWorkers();
@@ -80,6 +92,23 @@ namespace Hospital_Panel
         {
             workersList.ListOfWorkers.Add(pracownik);
             Serialize(workersList);
+        }
+
+        public void Remove(int worker_id)
+        {
+            workersList.ListOfWorkers.RemoveAt(worker_id);
+            Serialize(workersList);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Dispatcher.InvokeShutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

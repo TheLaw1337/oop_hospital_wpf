@@ -20,3 +20,7 @@ C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\bin\Debug\Szpital_Pracownic
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\Hospital_Panel.csproj.CopyComplete
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\ListWorkers.g.cs
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\ListWorkers.baml
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddNurse.g.cs
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddNurse.baml
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddAdmin.g.cs
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddAdmin.baml

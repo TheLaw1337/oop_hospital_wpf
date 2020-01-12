@@ -16,21 +16,19 @@ using Szpital_Pracownicy;
 namespace Hospital_Panel
 {
     /// <summary>
-    /// Interaction logic for AddDoctor.xaml
+    /// Interaction logic for AddNurse.xaml
     /// </summary>
-    public partial class AddDoctor : Window
+    public partial class AddNurse : Window
     {
         MainWindow mw = new MainWindow();
-        static ID_Operations id_ops = new ID_Operations("NR_Doc.txt");
-        static string path = "NR_Doc.txt";
-        public AddDoctor()
+        public AddNurse()
         {
             InitializeComponent();
         }
 
-        private void SaveNewDoctor(object sender, RoutedEventArgs e)
+        private void SaveNewNurse(object sender, RoutedEventArgs e)
         {
-            Pracownik p = new Doctor(txtSurname.Text, txtName.Text, long.Parse(txtPesel.Text), cb_Spec.Text, int.Parse(txtPWZ.Text), passwordBox.Password);
+            Pracownik p = new Nurse(txtSurname.Text, txtName.Text, long.Parse(txtPesel.Text), passwordBox.Password);
             //p.Number = id_ops.NextID(path);
             //p.No_num = $"Doc. {p.Number.ToString()}";
             mw.Add(p);

@@ -49,5 +49,72 @@ namespace Hospital_Panel
         {
             FillList();
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ListBox.Items.IndexOf(ListBox.SelectedItem);
+            MessageBoxResult result = MessageBox.Show($"Are you sure to delete the user '{list.ListOfWorkers[index].Username}'?", "Please confirm", MessageBoxButton.YesNo);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    
+                    mw.Remove(index);
+                    break;
+                case MessageBoxResult.No:
+                    break;
+                
+            }
+            FillList();
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ListBox.Items.IndexOf(ListBox.SelectedItem);
+            string surname, name;
+            long pesel;
+            surname = list.ListOfWorkers[index].Surname;
+            name = list.ListOfWorkers[index].Name;
+            pesel = list.ListOfWorkers[index].Pesel;
+            string function = list.ListOfWorkers[index].GetFunction();
+
+            switch (function)
+            {
+                case "Doctor":
+                    {
+                        AddDoctor ad = new AddDoctor();
+                        
+                        //string temp_no_num = list.ListOfWorkers[index].No_num;
+                        mw.Remove(index);
+                        ad.Update(surname, name, pesel.ToString());
+                        
+                        break;
+                    }
+                case "Nurse":
+                    {
+                        AddNurse an = new AddNurse();
+
+                        //string temp_no_num = list.ListOfWorkers[index].No_num;
+                        mw.Remove(index);
+                        an.Update(surname, name, pesel.ToString());
+
+                        break;
+                    }
+                case "Administrator":
+                    {
+                        AddAdmin aa = new AddAdmin();
+                        mw.Remove(index);
+                        aa.Update(surname, name, pesel.ToString());
+
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
