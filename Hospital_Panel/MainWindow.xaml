@@ -22,7 +22,7 @@
             <Button Width="150" Height="30" Click="AddAdmin_Click">Admin</Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Margin="476,150,0,115">
-            <Button Width="150" Height="30">Shifts</Button>
+            <Button Width="150" Height="30" Click="Shifts_Click">Shifts</Button>
             <Button Width="150" Height="30" Click="ShowWorkers_Click">Show Workers</Button>
         </StackPanel>
     </Grid>

@@ -56,7 +56,11 @@ namespace Hospital_Panel
             lw.Show();
         }
 
-
+        private void Shifts_Click(object sender, RoutedEventArgs e)
+        {
+            Shifts sh = new Shifts();
+            sh.Show();
+        }
 
         public static WorkersList Deserialize()
         {

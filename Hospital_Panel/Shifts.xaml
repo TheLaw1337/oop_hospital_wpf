@@ -1,0 +1,21 @@
+﻿<Window x:Class="Hospital_Panel.Shifts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hospital_Panel"
+        mc:Ignorable="d"
+        Title="Shifts" Height="450" Width="628.654">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Margin="0,1,0,370">
+            Shifts
+        </TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="15,54,0,302">
+            <Button Width="120" Height="30" Click="AddShift_Click">Add new shift</Button>
+            <Button Width="120" Height="30" >Refresh</Button>
+            <Button Width="120" Height="30" >Delete worker data</Button>
+            <Button Width="150" Height="30" >Delete worker data</Button>
+        </StackPanel>
+        <ListBox Margin="30,117,38,11" Name="ListBox" />
+    </Grid>
+</Window>

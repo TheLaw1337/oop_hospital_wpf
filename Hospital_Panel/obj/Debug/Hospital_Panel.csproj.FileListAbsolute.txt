@@ -24,3 +24,7 @@ C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddNurse.g.cs
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddNurse.baml
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddAdmin.g.cs
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\AddAdmin.baml
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\Shifts.g.cs
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\Shifts.baml
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\NewShift.g.cs
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\NewShift.baml
