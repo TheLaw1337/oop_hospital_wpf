@@ -5,20 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital_Panel"
         mc:Ignorable="d"
-        Title="AddDoctor" Height="450" Width="479.496">
+        Title="AddDoctor" Height="474" Width="479.496">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Margin="117,16,0,355">
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Margin="117,1,0,370">
             Add new doctor
         </TextBlock>
-        <StackPanel HorizontalAlignment="Left" Margin="28,84,0,119" Width="138">
+        <StackPanel HorizontalAlignment="Left" Margin="75,49,0,10" Width="323">
             <Label Content="_Surname:" Target="{Binding ElementName=txtSurname}" />
-            <TextBox Name="txtSurname" />
+            <TextBox Name="txtSurname" Margin="0,0,10,0" />
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
-            <TextBox Name="txtName" />
+            <TextBox Name="txtName" Margin="0,0,10,0"/>
             <Label Content="_PESEL:" Target="{Binding ElementName=txtPesel}" />
-            <TextBox Name="txtPesel" />
+            <TextBox Name="txtPesel" Margin="0,0,10,0"/>
             <Label Content="_PWZ Number:" Target="{Binding ElementName=txtPWZ}" />
-            <TextBox Name="txtPWZ" />
+            <TextBox Name="txtPWZ" Margin="0,0,10,0"/>
+            <Label Content="_Specialty:" Target="{Binding ElementName=cb_Spec}" />
+            <ComboBox Name="cb_Spec" Height="30" Margin="0,0,10,0">
+                <ComboBoxItem Content="Kardiolog"></ComboBoxItem>
+                <ComboBoxItem Content="Urolog"></ComboBoxItem>
+                <ComboBoxItem Content="Neurolog"></ComboBoxItem>
+                <ComboBoxItem Content="Laryngolog"></ComboBoxItem>
+            </ComboBox>
+            <Label Content="Password:" Target="{Binding ElementName=passwordBox}"/>
+            <PasswordBox x:Name="passwordBox"  Margin="0,0,10,0"/>
+            <Button Width="150" Height="30" Margin="20">Save</Button>
         </StackPanel>
+
     </Grid>
 </Window>

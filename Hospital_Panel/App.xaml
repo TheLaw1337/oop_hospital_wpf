@@ -12,5 +12,6 @@
             
             <Setter Property="Margin" Value="4" />
         </Style>
+        
     </Application.Resources>
 </Application>
