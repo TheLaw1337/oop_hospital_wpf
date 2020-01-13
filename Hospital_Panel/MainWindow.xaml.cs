@@ -114,5 +114,10 @@ namespace Hospital_Panel
         {
 
         }
+
+        public void Serialize_NewShift(WorkersList l)
+        {
+            Serialize(l);
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace Hospital_Panel
     public partial class NewShift : Window
     {
         static WorkersList list = new WorkersList();
+        MainWindow mw = new MainWindow();
 
         public NewShift()
         {
@@ -33,7 +34,7 @@ namespace Hospital_Panel
         {
             string text = null;
             list = MainWindow.Deserialize();
-            ArrayList itemsList = new ArrayList();
+            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
@@ -48,9 +49,33 @@ namespace Hospital_Panel
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SaveShift_Click(object sender, RoutedEventArgs e)
         {
+            int index = cb_WorkersList.SelectedIndex;
+            DateTime shiftDate = DatePick.SelectedDate.Value.Date;
 
+            //list.ListOfWorkers[index].shift_list.Add(shiftDate);
+            //mw.Serialize();
+
+            //int index = ListBox.Items.IndexOf(ListBox.SelectedItem);
+            string surname, name;
+            long pesel;
+            surname = list.ListOfWorkers[index].Surname;
+            name = list.ListOfWorkers[index].Name;
+            pesel = list.ListOfWorkers[index].Pesel;
+            string function = list.ListOfWorkers[index].GetFunction();
+            List<DateTime> shiftlist = list.ListOfWorkers[index].shift_list;
+            shiftlist.Add(shiftDate);
+
+            foreach (Pracownik record in list.ListOfWorkers)
+            {
+                if (record.Pesel.Equals(pesel))
+                {
+                    record.shift_list = shiftlist;
+                    mw.Serialize_NewShift(list);
+                }
+            }
+            this.Close();
         }
     }
 }
