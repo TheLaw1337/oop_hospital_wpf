@@ -44,11 +44,37 @@ namespace Hospital_Panel
             foreach (Pracownik record in list.ListOfWorkers)
             {
 
-                text = $"{record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
-                itemsList.Add(text);
+                text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
+                //itemsList.Add(text);
+                cb_ShiftWorkersList.Items.Add(text);
             }
 
-            ListBox.ItemsSource = itemsList;
+            //ListBox.ItemsSource = itemsList;
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            cb_ShiftWorkersList.Items.Clear();
+            FillList();
+        }
+
+        private void cb_ShiftWorkersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            object test = cb_ShiftWorkersList.SelectedItem;
+
+            string text;
+            list = MainWindow.Deserialize();
+            ArrayList itemsList = new ArrayList();
+
+            foreach (Pracownik record in list.ListOfWorkers)
+            {
+                text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
+                if (text.Equals(test))
+                {
+                    ListBox.Items.Clear();
+                    ListBox.ItemsSource = record.shift_list;
+                }
+            }
         }
     }
 }

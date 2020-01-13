@@ -77,5 +77,7 @@ namespace Hospital_Panel
             }
             this.Close();
         }
+
+        
     }
 }

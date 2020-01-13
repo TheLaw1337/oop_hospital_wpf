@@ -12,10 +12,13 @@
         </TextBlock>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="15,54,0,302">
             <Button Width="120" Height="30" Click="AddShift_Click">Add new shift</Button>
-            <Button Width="120" Height="30" >Refresh</Button>
+            <Button Width="120" Height="30" Click="Refresh_Click">Refresh</Button>
             <Button Width="120" Height="30" >Delete worker data</Button>
             <Button Width="150" Height="30" >Delete worker data</Button>
         </StackPanel>
-        <ListBox Margin="30,117,38,11" Name="ListBox" />
+        <ComboBox Name="cb_ShiftWorkersList" SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35" VerticalAlignment="Top">
+
+        </ComboBox>
+        <ListBox Margin="30,188,38,11" Name="ListBox" />
     </Grid>
 </Window>
