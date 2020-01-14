@@ -58,3 +58,5 @@ C:\Users\daniel.sobczak\source\repos\Hospital\Hospital_Panel\obj\Debug\Hospital_
 C:\Users\daniel.sobczak\source\repos\Hospital\Hospital_Panel\obj\Debug\Hospital_Panel.Properties.Resources.resources
 C:\Users\daniel.sobczak\source\repos\Hospital\Hospital_Panel\obj\Debug\Hospital_Panel.csproj.GenerateResource.cache
 C:\Users\daniel.sobczak\source\repos\Hospital\Hospital_Panel\obj\Debug\Hospital_Panel.csproj.CopyComplete
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\UpdateShift.g.cs
+C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\obj\Debug\UpdateShift.baml

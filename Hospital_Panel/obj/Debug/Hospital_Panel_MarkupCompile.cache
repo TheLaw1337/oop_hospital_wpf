@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Daniel\source\repos\Hospital\Hospital_Panel\App.xaml
-71484999026
+8957658402
 
-1278830405
+141756023740
 141854062848
-AddAdmin.xaml;AddDoctor.xaml;AddNurse.xaml;ListWorkers.xaml;MainWindow.xaml;NewShift.xaml;Shifts.xaml;
+AddAdmin.xaml;AddDoctor.xaml;AddNurse.xaml;ListWorkers.xaml;MainWindow.xaml;NewShift.xaml;Shifts.xaml;UpdateShift.xaml;
 
-False
+True
 

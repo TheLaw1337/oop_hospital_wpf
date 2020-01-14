@@ -23,6 +23,7 @@ namespace Hospital_Panel
     {
         MainWindow mw = new MainWindow();
         static WorkersList list = new WorkersList();
+        public string newshiftdate;
         public Shifts()
         {
             InitializeComponent();
@@ -85,8 +86,11 @@ namespace Hospital_Panel
 
 
 
-            NewShift ns = new NewShift();
-            ns.Update(index, date);
+            //NewShift ns = new NewShift();
+            //ns.Update(index, date);
+            UpdateShift us = new UpdateShift();
+            newshiftdate = us.Update();
+            
         }
     }
 }

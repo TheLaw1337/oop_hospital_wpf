@@ -23,7 +23,8 @@ namespace Hospital_Panel
     {
         static WorkersList list = new WorkersList();
         MainWindow mw = new MainWindow();
-
+        DateTime new_shiftdate;
+        
         public NewShift()
         {
             InitializeComponent();
@@ -78,14 +79,15 @@ namespace Hospital_Panel
             this.Close();
         }
 
-        public void Update(int i, string d) {
+        public DateTime Update(int i, string d) {
+            
             this.Show();
             cb_WorkersList.SelectedIndex = i;
             cb_WorkersList.IsEnabled = false;
             DateTime shiftdate = Convert.ToDateTime(d);
             DatePick.SelectedDate = shiftdate;
 
-
+            return new_shiftdate;
         }
     }
 }
