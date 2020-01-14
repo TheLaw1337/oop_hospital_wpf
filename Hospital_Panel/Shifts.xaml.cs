@@ -80,12 +80,17 @@ namespace Hospital_Panel
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            int index = cb_ShiftWorkersList.SelectedIndex;
+            
             string date = ListBox.SelectedItem.ToString();
+
 
 
             NewShift ns = new NewShift();
             ns.Update(index, date);
+
+            NewShift ns = new NewShift();
+            ns.Update(index, date);
+
         }
     }
 }
