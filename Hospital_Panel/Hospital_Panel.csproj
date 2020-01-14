@@ -138,7 +138,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Szpital_Pracownicy\Szpital_Pracownicy\Szpital_Pracownicy.csproj">
+    <ProjectReference Include="..\Szpital_Pracownicy\Szpital_Pracownicy.csproj">
       <Project>{f020071c-4e6b-4f97-a2e0-1db1c8ef4f36}</Project>
       <Name>Szpital_Pracownicy</Name>
     </ProjectReference>

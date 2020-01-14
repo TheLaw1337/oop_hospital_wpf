@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital_Panel", "Hospital_Panel\Hospital_Panel.csproj", "{64F6642B-DB73-48F7-8ECB-38BFF165F579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szpital_Pracownicy", "..\Szpital_Pracownicy\Szpital_Pracownicy\Szpital_Pracownicy.csproj", "{F020071C-4E6B-4F97-A2E0-1DB1C8EF4F36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szpital_Pracownicy", "Szpital_Pracownicy\Szpital_Pracownicy.csproj", "{F020071C-4E6B-4F97-A2E0-1DB1C8EF4F36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,3 +3,8 @@ C:\Users\Daniel\source\repos\Szpital_Pracownicy\Szpital_Pracownicy\bin\Debug\Szp
 C:\Users\Daniel\source\repos\Szpital_Pracownicy\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.csprojAssemblyReference.cache
 C:\Users\Daniel\source\repos\Szpital_Pracownicy\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.dll
 C:\Users\Daniel\source\repos\Szpital_Pracownicy\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.pdb
+C:\Users\daniel.sobczak\source\repos\Hospital\Szpital_Pracownicy\bin\Debug\Szpital_Pracownicy.dll
+C:\Users\daniel.sobczak\source\repos\Hospital\Szpital_Pracownicy\bin\Debug\Szpital_Pracownicy.pdb
+C:\Users\daniel.sobczak\source\repos\Hospital\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.csprojAssemblyReference.cache
+C:\Users\daniel.sobczak\source\repos\Hospital\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.dll
+C:\Users\daniel.sobczak\source\repos\Hospital\Szpital_Pracownicy\obj\Debug\Szpital_Pracownicy.pdb

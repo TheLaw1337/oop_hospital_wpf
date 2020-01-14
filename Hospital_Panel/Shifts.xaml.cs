@@ -71,10 +71,25 @@ namespace Hospital_Panel
                 text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
                 if (text.Equals(test))
                 {
-                    ListBox.Items.Clear();
-                    ListBox.ItemsSource = record.shift_list;
+                    //ListBox.ItemsSource.Clear();
+                    
+                    ListBox.ItemsSource = record.shift_list.Select(x => x.ToShortDateString());
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int index = cb_ShiftWorkersList.SelectedIndex;
+            string date = ListBox.SelectedItem.ToString();
+
+            NewShift ns = new NewShift();
+            foreach (Pracownik record in list.ListOfWorkers)
+            {
+                
+            }
+
+            ns.Update(index, date);
         }
     }
 }
