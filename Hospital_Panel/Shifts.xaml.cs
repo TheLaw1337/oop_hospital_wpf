@@ -39,7 +39,7 @@ namespace Hospital_Panel
         {
             string text;
             list = MainWindow.Deserialize();
-            ArrayList itemsList = new ArrayList();
+            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
@@ -83,18 +83,8 @@ namespace Hospital_Panel
             int index = cb_ShiftWorkersList.SelectedIndex;
             string date = ListBox.SelectedItem.ToString();
 
+
             NewShift ns = new NewShift();
-            foreach (Pracownik record in list.ListOfWorkers)
-            {
-                foreach (string shift in record.shift_list)
-                {
-                    if()
-                    {
-
-                    }
-                }
-            }
-
             ns.Update(index, date);
         }
     }
