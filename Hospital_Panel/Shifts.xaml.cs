@@ -78,7 +78,7 @@ namespace Hospital_Panel
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Update_Click(object sender, RoutedEventArgs e)
         {
             int index = cb_ShiftWorkersList.SelectedIndex;
             string date = ListBox.SelectedItem.ToString();
@@ -86,7 +86,13 @@ namespace Hospital_Panel
             NewShift ns = new NewShift();
             foreach (Pracownik record in list.ListOfWorkers)
             {
-                
+                foreach (string shift in record.shift_list)
+                {
+                    if()
+                    {
+
+                    }
+                }
             }
 
             ns.Update(index, date);

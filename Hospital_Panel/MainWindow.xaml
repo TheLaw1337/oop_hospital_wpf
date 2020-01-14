@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hospital_Panel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="CanMinimize">
     <Grid>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Margin="308,16,0,356">
             Main Menu
