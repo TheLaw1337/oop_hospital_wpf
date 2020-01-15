@@ -87,16 +87,43 @@ namespace Hospital_Panel
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            int index = cb_ShiftWorkersList.SelectedIndex;
-            string date = ListBox.SelectedItem.ToString();
+            //int index = cb_ShiftWorkersList.SelectedIndex;
+            //string date = ListBox.SelectedItem.ToString();
 
 
 
             //NewShift ns = new NewShift();
             //ns.Update(index, date);
             UpdateShift us = new UpdateShift();
-            newshiftdate = us.Update();
-            
+            us.Update();
+            //MessageBox.Show(newshiftdate);
+        }
+
+        public void Update_Date(string d)
+        {
+            object test = cb_ShiftWorkersList.SelectedItem;
+            string selected_listbox = ListBox.SelectedItem.ToString();
+
+            string text;
+            list = MainWindow.Deserialize();
+
+            foreach (var record in list.ListOfWorkers)
+            {
+                text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
+                if (text.Equals(test))
+                {
+                    foreach (var item in record.shift_list)
+                    {
+                        string to_compare = $"{item.date.ToShortDateString()}";
+
+
+                        if (to_compare.Equals(d))
+                        {
+                            MessageBox.Show("Zgadza się");
+                        }
+                    }
+                }
+            }
         }
     }
 }

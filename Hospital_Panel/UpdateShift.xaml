@@ -6,8 +6,9 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Hospital_Panel"
         mc:Ignorable="d"
-        Title="UpdateShift" Height="394.542" Width="354.754">
+        Title="UpdateShift" Height="462.455" Width="354.754">
     <Grid>
-        <DatePicker  Name="ShiftUpdate_Picker" SelectedDateFormat="Short" SelectedDateChanged="GetNewDate" DisplayDateStart="{x:Static sys:DateTime.Today}"></DatePicker>
+        <DatePicker  Name="ShiftUpdate_Picker" SelectedDateFormat="Short"  DisplayDateStart="{x:Static sys:DateTime.Today}" Margin="0,0,0,108"></DatePicker>
+        <Button Name="SaveUpdatedDate" Click="SaveUpdatedDate_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,40">Save</Button>
     </Grid>
 </Window>

@@ -17,8 +17,10 @@ namespace Hospital_Panel
     /// <summary>
     /// Interaction logic for UpdateShift.xaml
     /// </summary>
+    
     public partial class UpdateShift : Window
     {
+        Shifts sh = new Shifts();
         DateTime dateToChange;
         Shifts s = new Shifts();
         public string tomsg;
@@ -27,19 +29,25 @@ namespace Hospital_Panel
             InitializeComponent();
         }
 
-        public void GetNewDate(object sender, SelectionChangedEventArgs e)
+        public string GetNewDate()
         {
             tomsg = ShiftUpdate_Picker.SelectedDate.Value.ToString("d");
             //s.newshiftdate = tomsg;
             this.Close();
+            return tomsg;
+        }
+
+        public void Update()
+        {
+            this.Show();
             
         }
 
-        public string Update()
+        private void SaveUpdatedDate_Click(object sender, RoutedEventArgs e)
         {
-            this.Show();
-            return tomsg;
+            string selected_date = GetNewDate();
+            //MessageBox.Show(selected_date);
+            sh.Update_Date(selected_date);
         }
-        
     }
 }
