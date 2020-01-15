@@ -19,7 +19,7 @@ namespace Szpital_Pracownicy
         public int Number;
         public string No_num;
         public string Function;
-        public List<DateTime> shift_list = new List<DateTime>();
+        public List<Shift> shift_list = new List<Shift>();
 
         public Pracownik(string newSurname, string newName, long newPesel, string newPassword)
         {

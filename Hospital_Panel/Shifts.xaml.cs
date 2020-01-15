@@ -65,16 +65,22 @@ namespace Hospital_Panel
 
             string text;
             list = MainWindow.Deserialize();
-            ArrayList itemsList = new ArrayList();
+            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
                 text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
                 if (text.Equals(test))
                 {
-                    //ListBox.ItemsSource.Clear();
+                    ListBox.Items.Clear();
                     
-                    ListBox.ItemsSource = record.shift_list.Select(x => x.ToShortDateString());
+                    //ListBox.ItemsSource = record.shift_list;
+
+                foreach (var item in record.shift_list)
+                    {
+                        string to_display = $"{item.id} | {item.date.ToShortDateString()}";
+                        ListBox.Items.Add(to_display);
+                    }
                 }
             }
         }

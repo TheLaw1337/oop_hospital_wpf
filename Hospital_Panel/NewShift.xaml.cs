@@ -65,8 +65,11 @@ namespace Hospital_Panel
             name = list.ListOfWorkers[index].Name;
             pesel = list.ListOfWorkers[index].Pesel;
             string function = list.ListOfWorkers[index].GetFunction();
-            List<DateTime> shiftlist = list.ListOfWorkers[index].shift_list;
-            shiftlist.Add(shiftDate);
+            List<Shift> shiftlist = list.ListOfWorkers[index].shift_list;
+            Shift nshift = new Shift();
+            nshift.id = shiftlist.Count + 1;
+            nshift.date = shiftDate;
+            shiftlist.Add(nshift);
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
