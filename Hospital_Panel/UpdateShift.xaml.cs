@@ -47,6 +47,7 @@ namespace Hospital_Panel
         {
             string selected_date = GetNewDate();
             //MessageBox.Show(selected_date);
+            string selected_listbox = sh.ListBox.SelectedItem.ToString();
             sh.Update_Date(selected_date);
         }
     }

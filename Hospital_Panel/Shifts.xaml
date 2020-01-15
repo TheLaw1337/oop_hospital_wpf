@@ -16,7 +16,7 @@
             <Button Width="120" Height="30" Click="Update_Click">Update shift data</Button>
             <Button Width="150" Height="30" >Delete worker data</Button>
         </StackPanel>
-        <ComboBox Name="cb_ShiftWorkersList" SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35" VerticalAlignment="Top">
+        <ComboBox Name="cb_ShiftWorkersList"  SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35" VerticalAlignment="Top">
 
         </ComboBox>
         <ListBox Margin="30,188,38,11" Name="ListBox" />
