@@ -24,6 +24,7 @@ namespace Hospital_Panel
         static WorkersList list = new WorkersList();
         MainWindow mw = new MainWindow();
         DateTime new_shiftdate;
+        string specialty;
         
         public NewShift()
         {
@@ -66,13 +67,13 @@ namespace Hospital_Panel
             name = list.ListOfWorkers[index].Name;
             pesel = list.ListOfWorkers[index].Pesel;
             string function = list.ListOfWorkers[index].GetFunction();
-            string specialty = list.ListOfWorkers[index].GetSpec(list.ListOfWorkers[index]);
+            specialty = list.ListOfWorkers[index].GetSpec(list.ListOfWorkers[index]);
             List<Shift> shiftlist = list.ListOfWorkers[index].shift_list;
             val_result = ShiftValidate(shiftlist, shiftDate);
 
             if (val_result.Equals(false))
             {
-                MessageBox.Show("Too many shifts");
+                MessageBox.Show("Can't add shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
             }
             else
             {
@@ -91,6 +92,7 @@ namespace Hospital_Panel
                 }
                 this.Close();
             }
+
         }
 
         public DateTime Update(int i, string d) {
@@ -108,8 +110,12 @@ namespace Hospital_Panel
         {
             int month = newdate.Month;
             int count = 0;
+            int crit2_count = 0;
+            bool crit1 = false;
+            bool crit2 = false;
             bool val_ok = false;
 
+            //validation criteria nr 1 (max 10 shifts in month)
             for (int i = 0; i < l.Count; i++)
             {
                 if (l[i].date.Month.Equals(month))
@@ -118,8 +124,35 @@ namespace Hospital_Panel
                 }
                 
             }
-
             if (count < 10)
+            {
+                crit1 = true;
+            }
+            else
+            {
+                MessageBox.Show("Too many shifts");
+            }
+            //validation criteria nr 2 (Two or more cardiologist/urologist/etc. can't have shift at the same day)
+            foreach (Pracownik record in list.ListOfWorkers)
+            {
+                if (record.Function.Equals("Doctor") && record.GetSpec(record).Equals(specialty))
+                {
+                    for (int i = 0; i < record.shift_list.Count; i++)
+                    {
+                        if (record.shift_list[i].date.Equals(newdate))
+                        {
+                            MessageBox.Show("Detected other doctor with same specialty which has a shift at this day");
+                            crit2_count++;
+                        }
+                    }
+                }
+                if (crit2_count.Equals(0))
+                {
+                    crit2 = true;
+                }
+            }
+
+            if (crit1.Equals(true) && crit2.Equals(true))
             {
                 val_ok = true;
             }
