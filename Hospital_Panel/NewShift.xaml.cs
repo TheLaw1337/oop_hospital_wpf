@@ -66,6 +66,7 @@ namespace Hospital_Panel
             name = list.ListOfWorkers[index].Name;
             pesel = list.ListOfWorkers[index].Pesel;
             string function = list.ListOfWorkers[index].GetFunction();
+            string specialty = list.ListOfWorkers[index].GetSpec(list.ListOfWorkers[index]);
             List<Shift> shiftlist = list.ListOfWorkers[index].shift_list;
             val_result = ShiftValidate(shiftlist, shiftDate);
 
@@ -115,6 +116,7 @@ namespace Hospital_Panel
                 {
                     count++;
                 }
+                
             }
 
             if (count < 10)

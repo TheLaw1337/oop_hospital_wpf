@@ -45,5 +45,11 @@ namespace Szpital_Pracownicy
             return $"{this.Function}";
         }
 
+        public string GetSpec(Pracownik p)
+        {
+            string childProp1 = ((Doctor)p).Specialty;
+
+            return childProp1;
+        }
     }
 }
