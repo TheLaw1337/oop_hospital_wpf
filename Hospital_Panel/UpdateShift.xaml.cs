@@ -29,11 +29,17 @@ namespace Hospital_Panel
             InitializeComponent();
         }
 
+        public UpdateShift(Shifts sh)
+        {
+            InitializeComponent();
+            this.sh = sh;
+        }
+
         public string GetNewDate()
         {
             tomsg = ShiftUpdate_Picker.SelectedDate.Value.ToString("d");
             //s.newshiftdate = tomsg;
-            this.Close();
+            //this.Close();
             return tomsg;
         }
 

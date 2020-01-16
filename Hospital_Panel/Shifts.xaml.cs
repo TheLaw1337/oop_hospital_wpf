@@ -94,7 +94,7 @@ namespace Hospital_Panel
 
             //NewShift ns = new NewShift();
             //ns.Update(index, date);
-            UpdateShift us = new UpdateShift();
+            UpdateShift us = new UpdateShift(this);
             us.Update();
             //MessageBox.Show(newshiftdate);
         }
@@ -116,11 +116,11 @@ namespace Hospital_Panel
                     {
                         string to_compare = $"{item.date.ToShortDateString()}";
 
-
-                        if (to_compare.Equals(d))
-                        {
-                            MessageBox.Show("Zgadza się");
-                        }
+                        MessageBox.Show($"Old date: {to_compare}\nNew date: {d}");
+                        //if (to_compare.Equals(d))
+                        //{
+                        //    MessageBox.Show($"Old date: to_compare\nfdsfsfdsfs");
+                        //}
                     }
                 }
             }
