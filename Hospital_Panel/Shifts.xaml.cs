@@ -24,6 +24,7 @@ namespace Hospital_Panel
         MainWindow mw = new MainWindow();
         static WorkersList list = new WorkersList();
         public string newshiftdate;
+        NewShift ns = new NewShift();
         public Shifts()
         {
             InitializeComponent();
@@ -103,6 +104,8 @@ namespace Hospital_Panel
         {
             object test = cb_ShiftWorkersList.SelectedItem;
             string selected_listbox = ListBox.SelectedItem.ToString();
+            bool val_result;
+            bool failed = false;
 
             string text;
             list = MainWindow.Deserialize();
@@ -116,14 +119,28 @@ namespace Hospital_Panel
                     {
                         string to_compare = $"{item.date.ToShortDateString()}";
                         DateTime new_date = Convert.ToDateTime(d);
-                        item.date = new_date;
-                        mw.Serialize_NewShift(list);
-                        break;
-                        //if (to_compare.Equals(d))
-                        //{
-                        //    MessageBox.Show($"Old date: to_compare\nfdsfsfdsfs");
-                        //}
+                        val_result = ns.ShiftValidate(record.shift_list, new_date);
+                        if (val_result.Equals(false))
+                        {
+                            MessageBox.Show("Can't update shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
+                            failed = true;
+                        }
+                        else
+                        {
+                            item.date = new_date;
+                            mw.Serialize_NewShift(list);
+                            //done = true;
+                            break;
+                        }
+                        if (failed)
+                        {
+                            break;
+                        }
                     }
+                    //if (done.Equals(true))
+                    //{
+                    //    break;
+                    //}
                 }
             }
         }
