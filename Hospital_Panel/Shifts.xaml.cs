@@ -115,8 +115,10 @@ namespace Hospital_Panel
                     foreach (var item in record.shift_list)
                     {
                         string to_compare = $"{item.date.ToShortDateString()}";
-
-                        MessageBox.Show($"Old date: {to_compare}\nNew date: {d}");
+                        DateTime new_date = Convert.ToDateTime(d);
+                        item.date = new_date;
+                        mw.Serialize_NewShift(list);
+                        break;
                         //if (to_compare.Equals(d))
                         //{
                         //    MessageBox.Show($"Old date: to_compare\nfdsfsfdsfs");

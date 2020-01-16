@@ -54,6 +54,7 @@ namespace Hospital_Panel
         {
             int index = cb_WorkersList.SelectedIndex;
             DateTime shiftDate = DatePick.SelectedDate.Value.Date;
+            bool val_result;
 
             //list.ListOfWorkers[index].shift_list.Add(shiftDate);
             //mw.Serialize();
@@ -66,20 +67,29 @@ namespace Hospital_Panel
             pesel = list.ListOfWorkers[index].Pesel;
             string function = list.ListOfWorkers[index].GetFunction();
             List<Shift> shiftlist = list.ListOfWorkers[index].shift_list;
-            Shift nshift = new Shift();
-            nshift.id = shiftlist.Count + 1;
-            nshift.date = shiftDate;
-            shiftlist.Add(nshift);
+            val_result = ShiftValidate(shiftlist, shiftDate);
 
-            foreach (Pracownik record in list.ListOfWorkers)
+            if (val_result.Equals(false))
             {
-                if (record.Pesel.Equals(pesel))
-                {
-                    record.shift_list = shiftlist;
-                    mw.Serialize_NewShift(list);
-                }
+                MessageBox.Show("Too many shifts");
             }
-            this.Close();
+            else
+            {
+                Shift nshift = new Shift();
+                nshift.id = shiftlist.Count + 1;
+                nshift.date = shiftDate;
+                shiftlist.Add(nshift);
+
+                foreach (Pracownik record in list.ListOfWorkers)
+                {
+                    if (record.Pesel.Equals(pesel))
+                    {
+                        record.shift_list = shiftlist;
+                        mw.Serialize_NewShift(list);
+                    }
+                }
+                this.Close();
+            }
         }
 
         public DateTime Update(int i, string d) {
@@ -91,6 +101,28 @@ namespace Hospital_Panel
             DatePick.SelectedDate = shiftdate;
 
             return new_shiftdate;
+        }
+
+        public bool ShiftValidate(List<Shift> l, DateTime newdate)
+        {
+            int month = newdate.Month;
+            int count = 0;
+            bool val_ok = false;
+
+            for (int i = 0; i < l.Count; i++)
+            {
+                if (l[i].date.Month.Equals(month))
+                {
+                    count++;
+                }
+            }
+
+            if (count < 10)
+            {
+                val_ok = true;
+            }
+            return val_ok;
+            
         }
     }
 }
