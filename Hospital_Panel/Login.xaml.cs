@@ -55,6 +55,10 @@ namespace Hospital_Panel
                 mw.Show();
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Wrong login and/or password");
+            }
         }
 
         public static WorkersList Deserialize()

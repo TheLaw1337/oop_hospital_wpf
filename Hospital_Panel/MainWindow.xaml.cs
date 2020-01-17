@@ -83,7 +83,16 @@ namespace Hospital_Panel
         private void Shifts_Click(object sender, RoutedEventArgs e)
         {
             Shifts sh = new Shifts();
+            MessageBox.Show(this.loggeduser_function);
+            if (this.loggeduser_function.Equals("Doctor") || this.loggeduser_function.Equals("Nurse"))
+            {
+                sh.AddShift.IsEnabled = false;
+                sh.Refresh.IsEnabled = false;
+                sh.UpdateShift.IsEnabled = false;
+                sh.DeleteShift.IsEnabled = false;
+            }
             sh.Show();
+            
         }
 
         public static WorkersList Deserialize()
