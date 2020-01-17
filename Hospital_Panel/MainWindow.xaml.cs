@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace Hospital_Panel
 
         //Shifts shifts = new Shifts();
         public string loggeduser_function;
+
 
         public MainWindow()
         {
@@ -119,7 +121,7 @@ namespace Hospital_Panel
             {
                 List<Pracownik> newList = new List<Pracownik>();
                 list.ListOfWorkers = newList;
-                //Console.WriteLine("List not found - new list created, will be saved during exit");
+                MessageBox.Show("List not found - new list created, will be saved during this session");
             }
 
             return list;
@@ -146,11 +148,6 @@ namespace Hospital_Panel
             Serialize(workersList);
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            Application.Current.Dispatcher.InvokeShutdown();
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -160,5 +157,7 @@ namespace Hospital_Panel
         {
             Serialize(l);
         }
+
+        
     }
 }
