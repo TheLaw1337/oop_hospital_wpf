@@ -7,25 +7,27 @@
         mc:Ignorable="d"
         Title="AddDoctor" Height="474" Width="482.496">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Margin="117,1,0,370"><Run Text="Add"/><Run Text="/edit "/><Run Text="doctor"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" Margin="117,1,0,370">
+            <Run Text="Add" /><Run Text="/edit " /><Run Text="doctor" />
+        </TextBlock>
         <StackPanel HorizontalAlignment="Left" Margin="75,49,0,10" Width="323">
             <Label Content="_Surname:" Target="{Binding ElementName=txtSurname}" />
             <TextBox Name="txtSurname" Margin="0,0,10,0" />
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
-            <TextBox Name="txtName" Margin="0,0,10,0"/>
+            <TextBox Name="txtName" Margin="0,0,10,0" />
             <Label Content="_PESEL:" Target="{Binding ElementName=txtPesel}" />
-            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0"/>
+            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0" />
             <Label Content="_PWZ Number:" Target="{Binding ElementName=txtPWZ}" />
-            <TextBox Name="txtPWZ" MaxLength="7" Margin="0,0,10,0"/>
+            <TextBox Name="txtPWZ" MaxLength="7" Margin="0,0,10,0" />
             <Label Content="_Specialty:" Target="{Binding ElementName=cb_Spec}" />
             <ComboBox Name="cb_Spec" Height="30" Margin="0,0,10,0">
-                <ComboBoxItem Content="Kardiolog"></ComboBoxItem>
-                <ComboBoxItem Content="Urolog"></ComboBoxItem>
-                <ComboBoxItem Content="Neurolog"></ComboBoxItem>
-                <ComboBoxItem Content="Laryngolog"></ComboBoxItem>
+                <ComboBoxItem Content="Kardiolog" />
+                <ComboBoxItem Content="Urolog" />
+                <ComboBoxItem Content="Neurolog" />
+                <ComboBoxItem Content="Laryngolog" />
             </ComboBox>
-            <Label Content="Password:" Target="{Binding ElementName=passwordBox}"/>
-            <PasswordBox x:Name="passwordBox"  Margin="0,0,10,0"/>
+            <Label Content="Password:" Target="{Binding ElementName=passwordBox}" />
+            <PasswordBox x:Name="passwordBox" Margin="0,0,10,0" />
             <Button Width="150" Height="30" Margin="20" Click="SaveNewDoctor">Save</Button>
         </StackPanel>
 

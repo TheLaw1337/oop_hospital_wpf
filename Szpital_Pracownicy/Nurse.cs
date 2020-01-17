@@ -16,18 +16,16 @@ namespace Szpital_Pracownicy
 
         public Nurse()
         {
-
         }
 
-        public Nurse(string newSurname, string newName, long newPesel, string newPassword) : base(newSurname, newName, newPesel, newPassword)
+        public Nurse(string newSurname, string newName, long newPesel, string newPassword) : base(newSurname, newName,
+            newPesel, newPassword)
         {
             Number++;
             this.No_num = $"Nur. {Number.ToString()}";
             this.Function = "Nurse";
-            
         }
 
-        
 
         public override string GetWorkerData()
         {

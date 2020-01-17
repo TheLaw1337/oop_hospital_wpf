@@ -23,6 +23,7 @@ namespace Hospital_Panel
     {
         MainWindow mw = new MainWindow();
         static WorkersList list = new WorkersList();
+
         public ListWorkers()
         {
             InitializeComponent();
@@ -37,7 +38,6 @@ namespace Hospital_Panel
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
-
                 text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
                 itemsList.Add(text);
             }
@@ -53,17 +53,19 @@ namespace Hospital_Panel
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int index = ListBox.Items.IndexOf(ListBox.SelectedItem);
-            MessageBoxResult result = MessageBox.Show($"Are you sure to delete the user '{list.ListOfWorkers[index].Username}'?", "Please confirm", MessageBoxButton.YesNo);
+            MessageBoxResult result =
+                MessageBox.Show($"Are you sure to delete the user '{list.ListOfWorkers[index].Username}'?",
+                    "Please confirm", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    
+
                     mw.Remove(index);
                     break;
                 case MessageBoxResult.No:
                     break;
-                
             }
+
             FillList();
         }
 
@@ -80,33 +82,33 @@ namespace Hospital_Panel
             switch (function)
             {
                 case "Doctor":
-                    {
-                        AddDoctor ad = new AddDoctor();
-                        
-                        //string temp_no_num = list.ListOfWorkers[index].No_num;
-                        mw.Remove(index);
-                        ad.Update(surname, name, pesel.ToString());
-                        
-                        break;
-                    }
+                {
+                    AddDoctor ad = new AddDoctor();
+
+                    //string temp_no_num = list.ListOfWorkers[index].No_num;
+                    mw.Remove(index);
+                    ad.Update(surname, name, pesel.ToString());
+
+                    break;
+                }
                 case "Nurse":
-                    {
-                        AddNurse an = new AddNurse();
+                {
+                    AddNurse an = new AddNurse();
 
-                        //string temp_no_num = list.ListOfWorkers[index].No_num;
-                        mw.Remove(index);
-                        an.Update(surname, name, pesel.ToString());
+                    //string temp_no_num = list.ListOfWorkers[index].No_num;
+                    mw.Remove(index);
+                    an.Update(surname, name, pesel.ToString());
 
-                        break;
-                    }
+                    break;
+                }
                 case "Administrator":
-                    {
-                        AddAdmin aa = new AddAdmin();
-                        mw.Remove(index);
-                        aa.Update(surname, name, pesel.ToString());
+                {
+                    AddAdmin aa = new AddAdmin();
+                    mw.Remove(index);
+                    aa.Update(surname, name, pesel.ToString());
 
-                        break;
-                    }
+                    break;
+                }
                 default:
                     break;
             }
@@ -114,7 +116,6 @@ namespace Hospital_Panel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

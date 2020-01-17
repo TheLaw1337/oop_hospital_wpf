@@ -22,10 +22,11 @@ namespace Hospital_Panel
     public partial class Shifts : Window
     {
         MainWindow mw = new MainWindow();
-        
+
         static WorkersList list = new WorkersList();
         public string newshiftdate;
         NewShift ns = new NewShift();
+
         public Shifts()
         {
             InitializeComponent();
@@ -48,7 +49,6 @@ namespace Hospital_Panel
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
-
                 text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
                 //itemsList.Add(text);
                 cb_ShiftWorkersList.Items.Add(text);
@@ -59,7 +59,6 @@ namespace Hospital_Panel
 
         public void ButtonFilter()
         {
-            
             if (mw.loggeduser_function.Equals("Doctor") || mw.loggeduser_function.Equals("Nurse"))
             {
                 AddShift.IsEnabled = false;
@@ -89,10 +88,10 @@ namespace Hospital_Panel
                 if (text.Equals(test))
                 {
                     ListBox.Items.Clear();
-                    
+
                     //ListBox.ItemsSource = record.shift_list;
 
-                foreach (var item in record.shift_list)
+                    foreach (var item in record.shift_list)
                     {
                         string to_display = $"{item.id} | {item.date.ToShortDateString()}";
                         ListBox.Items.Add(to_display);
@@ -105,7 +104,6 @@ namespace Hospital_Panel
         {
             //int index = cb_ShiftWorkersList.SelectedIndex;
             //string date = ListBox.SelectedItem.ToString();
-
 
 
             //NewShift ns = new NewShift();
@@ -144,7 +142,8 @@ namespace Hospital_Panel
                         val_result = ns.ShiftValidate(record.shift_list, new_date);
                         if (val_result.Equals(false))
                         {
-                            MessageBox.Show("Can't update shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
+                            MessageBox.Show(
+                                "Can't update shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
                             failed = true;
                         }
                         else
@@ -154,11 +153,13 @@ namespace Hospital_Panel
                             //done = true;
                             break;
                         }
+
                         if (failed)
                         {
                             break;
                         }
                     }
+
                     //if (done.Equals(true))
                     //{
                     //    break;
@@ -175,7 +176,8 @@ namespace Hospital_Panel
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure to delete this shift?", "Confirm delete operation", MessageBoxButton.YesNo);
+                MessageBoxResult result = MessageBox.Show("Are you sure to delete this shift?",
+                    "Confirm delete operation", MessageBoxButton.YesNo);
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
@@ -186,6 +188,7 @@ namespace Hospital_Panel
                 }
             }
         }
+
         public void DeleteDate()
         {
             string cb_text;
@@ -199,6 +202,7 @@ namespace Hospital_Panel
                     record.shift_list.RemoveAt(selected_listbox);
                 }
             }
+
             mw.Serialize_NewShift(list);
         }
     }

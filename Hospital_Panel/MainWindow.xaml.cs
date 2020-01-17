@@ -24,16 +24,17 @@ namespace Hospital_Panel
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public static List<Pracownik> workers = new List<Pracownik>();
         public static WorkersList workersList = Deserialize();
+
         Login log = new Login();
+
         //Shifts shifts = new Shifts();
         public string loggeduser_function;
+
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         public MainWindow(Login l)
@@ -44,7 +45,7 @@ namespace Hospital_Panel
             Button_Filter();
         }
 
-        
+
         private void Button_Filter()
         {
             if (loggeduser_function.Equals("Doctor") || loggeduser_function.Equals("Nurse"))
@@ -55,7 +56,7 @@ namespace Hospital_Panel
             }
         }
 
-        
+
         private void AddDoctor_Click(object sender, RoutedEventArgs e)
         {
             AddDoctor nd = new AddDoctor();
@@ -83,6 +84,7 @@ namespace Hospital_Panel
                 lw.Refresh.IsEnabled = false;
                 lw.DeleteWorker.IsEnabled = false;
             }
+
             lw.Show();
         }
 
@@ -97,8 +99,8 @@ namespace Hospital_Panel
                 sh.UpdateShift.IsEnabled = false;
                 sh.DeleteShift.IsEnabled = false;
             }
+
             sh.Show();
-            
         }
 
         public static WorkersList Deserialize()
@@ -110,7 +112,7 @@ namespace Hospital_Panel
             {
                 using (Stream fstream = new FileStream("hospital_data.dat", FileMode.Open, FileAccess.Read))
                 {
-                    list = (WorkersList)binary.Deserialize(fstream);
+                    list = (WorkersList) binary.Deserialize(fstream);
                 }
             }
             else
@@ -119,6 +121,7 @@ namespace Hospital_Panel
                 list.ListOfWorkers = newList;
                 //Console.WriteLine("List not found - new list created, will be saved during exit");
             }
+
             return list;
         }
 
@@ -151,7 +154,6 @@ namespace Hospital_Panel
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         public void Serialize_NewShift(WorkersList l)

@@ -8,14 +8,17 @@
         mc:Ignorable="d"
         Title="NewShift" Height="370.5" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,0,0,0" Height="52" Width="183">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,0,0,0" Height="52"
+                   Width="183">
             Add shift
         </TextBlock>
         <Label Content="_Worker:" Target="{Binding ElementName=cb_WorkersList}" Margin="41,71,61,227" />
-        <ComboBox Name="cb_WorkersList" Margin="41,117,61,0" Height="35" VerticalAlignment="Top">
-
-        </ComboBox>
-        <DatePicker Name="DatePick" Margin="41,173,61,122" SelectedDateFormat="Short" DisplayDateStart="{x:Static sys:DateTime.Today}"></DatePicker>
-        <Button Width="150" Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30"  Click="SaveShift_Click" >Save</Button>
+        <ComboBox Name="cb_WorkersList" Margin="41,117,61,0" Height="35" VerticalAlignment="Top" />
+        <DatePicker Name="DatePick" Margin="41,173,61,122" SelectedDateFormat="Short"
+                    DisplayDateStart="{x:Static sys:DateTime.Today}" />
+        <Button Width="150" Height="60" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30"
+                Click="SaveShift_Click">
+            Save
+        </Button>
     </Grid>
 </Window>

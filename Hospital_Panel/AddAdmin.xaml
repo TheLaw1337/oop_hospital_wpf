@@ -12,12 +12,12 @@
             <Label Content="_Surname:" Target="{Binding ElementName=txtSurname}" />
             <TextBox Name="txtSurname" Margin="0,0,10,0" />
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
-            <TextBox Name="txtName" Margin="0,0,10,0"/>
+            <TextBox Name="txtName" Margin="0,0,10,0" />
             <Label Content="_PESEL:" Target="{Binding ElementName=txtPesel}" />
-            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0"/>
+            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0" />
 
-            <Label Content="Password:" Target="{Binding ElementName=passwordBox}"/>
-            <PasswordBox x:Name="passwordBox"  Margin="0,0,10,0"/>
+            <Label Content="Password:" Target="{Binding ElementName=passwordBox}" />
+            <PasswordBox x:Name="passwordBox" Margin="0,0,10,0" />
             <Button Width="150" Height="30" Margin="20" Click="SaveNewAdmin">Save</Button>
         </StackPanel>
 

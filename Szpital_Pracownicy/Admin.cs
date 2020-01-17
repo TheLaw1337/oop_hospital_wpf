@@ -13,10 +13,10 @@ namespace Szpital_Pracownicy
 
         public Admin()
         {
-
         }
 
-        public Admin(string newName, string newSurname, long newPesel, string newPassword) : base(newSurname,newName,newPesel,newPassword)
+        public Admin(string newName, string newSurname, long newPesel, string newPassword) : base(newSurname, newName,
+            newPesel, newPassword)
         {
             Number++;
             this.No_num = $"Adm. {Number.ToString()}";

@@ -21,6 +21,7 @@ namespace Hospital_Panel
     public partial class AddAdmin : Window
     {
         MainWindow mw = new MainWindow();
+
         public AddAdmin()
         {
             InitializeComponent();
@@ -41,12 +42,10 @@ namespace Hospital_Panel
             txtSurname.Text = surname;
             txtName.Text = name;
             txtPesel.Text = pesel;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

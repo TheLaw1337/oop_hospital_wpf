@@ -32,7 +32,6 @@ namespace Szpital_Pracownicy
 
         public Pracownik()
         {
-
         }
 
         public virtual string GetWorkerData()
@@ -47,7 +46,7 @@ namespace Szpital_Pracownicy
 
         public string GetSpec(Pracownik p)
         {
-            string childProp1 = ((Doctor)p).Specialty;
+            string childProp1 = ((Doctor) p).Specialty;
 
             return childProp1;
         }

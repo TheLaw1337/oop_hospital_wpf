@@ -17,13 +17,13 @@ namespace Hospital_Panel
     /// <summary>
     /// Interaction logic for UpdateShift.xaml
     /// </summary>
-    
     public partial class UpdateShift : Window
     {
         Shifts sh = new Shifts();
         DateTime dateToChange;
         Shifts s = new Shifts();
         public string tomsg;
+
         public UpdateShift()
         {
             InitializeComponent();
@@ -46,7 +46,6 @@ namespace Hospital_Panel
         public void Update()
         {
             this.Show();
-            
         }
 
         private void SaveUpdatedDate_Click(object sender, RoutedEventArgs e)

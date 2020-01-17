@@ -25,16 +25,14 @@ namespace Hospital_Panel
         public static List<Pracownik> workers = new List<Pracownik>();
         public static WorkersList workersList = Deserialize();
         public string loggeduser_function;
-        
+
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private void login_TextChanged(object sender, TextChangedEventArgs e)
         {
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,8 +45,8 @@ namespace Hospital_Panel
                     login_result = true;
                     loggeduser_function = record.Function;
                 }
-                
             }
+
             if (login_result)
             {
                 MainWindow mw = new MainWindow(this);
@@ -70,7 +68,7 @@ namespace Hospital_Panel
             {
                 using (Stream fstream = new FileStream("hospital_data.dat", FileMode.Open, FileAccess.Read))
                 {
-                    list = (WorkersList)binary.Deserialize(fstream);
+                    list = (WorkersList) binary.Deserialize(fstream);
                 }
             }
             else
@@ -79,8 +77,8 @@ namespace Hospital_Panel
                 list.ListOfWorkers = newList;
                 //Console.WriteLine("List not found - new list created, will be saved during exit");
             }
+
             return list;
         }
-
     }
 }

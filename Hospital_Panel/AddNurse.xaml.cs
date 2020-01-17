@@ -21,6 +21,7 @@ namespace Hospital_Panel
     public partial class AddNurse : Window
     {
         MainWindow mw = new MainWindow();
+
         public AddNurse()
         {
             InitializeComponent();
@@ -41,7 +42,6 @@ namespace Hospital_Panel
             txtSurname.Text = surname;
             txtName.Text = name;
             txtPesel.Text = pesel;
-
         }
     }
 }

@@ -10,7 +10,9 @@ namespace Hospital_Panel
 {
     public class ID_Operations
     {
-        public ID_Operations(String filename) { }
+        public ID_Operations(String filename)
+        {
+        }
         //public void SaveID(string path)
         //{
         //    using (StreamWriter plik = new StreamWriter(path))
@@ -29,6 +31,7 @@ namespace Hospital_Panel
                     id = int.Parse(file.ReadLine());
                 }
             }
+
             return id;
         }
 
@@ -42,6 +45,7 @@ namespace Hospital_Panel
                     to_add = int.Parse(file.ReadLine());
                 }
             }
+
             to_add++;
             using (StreamWriter plik = new StreamWriter(path))
             {

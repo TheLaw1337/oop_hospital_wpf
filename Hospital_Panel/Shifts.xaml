@@ -16,9 +16,9 @@
             <Button Width="120" Height="30" Click="Update_Click" Name="UpdateShift">Update shift data</Button>
             <Button Width="150" Height="30" Click="Delete_Click" Name="DeleteShift">Delete shift data</Button>
         </StackPanel>
-        <ComboBox Name="cb_ShiftWorkersList"  SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35" VerticalAlignment="Top">
-
-        </ComboBox>
+        <ComboBox Name="cb_ShiftWorkersList" IsEditable="True" IsReadOnly="True" Text="Select a worker"
+                  SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35"
+                  VerticalAlignment="Top" />
         <ListBox Margin="30,188,38,11" Name="ListBox" />
     </Grid>
 </Window>

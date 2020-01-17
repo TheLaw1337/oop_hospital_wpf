@@ -23,6 +23,7 @@ namespace Hospital_Panel
         MainWindow mw = new MainWindow();
         static ID_Operations id_ops = new ID_Operations("NR_Doc.txt");
         static string path = "NR_Doc.txt";
+
         public AddDoctor()
         {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace Hospital_Panel
 
         private void SaveNewDoctor(object sender, RoutedEventArgs e)
         {
-            Pracownik p = new Doctor(txtSurname.Text, txtName.Text, long.Parse(txtPesel.Text), cb_Spec.Text, int.Parse(txtPWZ.Text), passwordBox.Password);
+            Pracownik p = new Doctor(txtSurname.Text, txtName.Text, long.Parse(txtPesel.Text), cb_Spec.Text,
+                int.Parse(txtPWZ.Text), passwordBox.Password);
             //p.Number = id_ops.NextID(path);
             //p.No_num = $"Doc. {p.Number.ToString()}";
             mw.Add(p);
@@ -43,7 +45,6 @@ namespace Hospital_Panel
             txtSurname.Text = surname;
             txtName.Text = name;
             txtPesel.Text = pesel;
-
         }
     }
 }

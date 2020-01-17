@@ -25,7 +25,7 @@ namespace Hospital_Panel
         MainWindow mw = new MainWindow();
         DateTime new_shiftdate;
         string specialty;
-        
+
         public NewShift()
         {
             InitializeComponent();
@@ -48,7 +48,6 @@ namespace Hospital_Panel
             }
 
             //ListBox.ItemsSource = itemsList;
-            
         }
 
         private void SaveShift_Click(object sender, RoutedEventArgs e)
@@ -73,7 +72,8 @@ namespace Hospital_Panel
 
             if (val_result.Equals(false))
             {
-                MessageBox.Show("Can't add shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
+                MessageBox.Show(
+                    "Can't add shift - 1 or 2 validation criterias failed\n1) Max 10 shifts in month\n2) Two or more cardiologist/urologist/etc. can't have shift at the same day");
             }
             else
             {
@@ -90,13 +90,13 @@ namespace Hospital_Panel
                         mw.Serialize_NewShift(list);
                     }
                 }
+
                 this.Close();
             }
-
         }
 
-        public DateTime Update(int i, string d) {
-            
+        public DateTime Update(int i, string d)
+        {
             this.Show();
             cb_WorkersList.SelectedIndex = i;
             cb_WorkersList.IsEnabled = false;
@@ -122,8 +122,8 @@ namespace Hospital_Panel
                 {
                     count++;
                 }
-                
             }
+
             if (count < 10)
             {
                 crit1 = true;
@@ -132,6 +132,7 @@ namespace Hospital_Panel
             {
                 MessageBox.Show("Too many shifts");
             }
+
             //validation criteria nr 2 (Two or more cardiologist/urologist/etc. can't have shift at the same day)
             foreach (Pracownik record in list.ListOfWorkers)
             {
@@ -146,6 +147,7 @@ namespace Hospital_Panel
                         }
                     }
                 }
+
                 if (crit2_count.Equals(0))
                 {
                     crit2 = true;
@@ -156,8 +158,8 @@ namespace Hospital_Panel
             {
                 val_ok = true;
             }
+
             return val_ok;
-            
         }
     }
 }
