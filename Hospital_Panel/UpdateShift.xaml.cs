@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Hospital_Panel
 {
@@ -38,8 +27,6 @@ namespace Hospital_Panel
         public string GetNewDate()
         {
             tomsg = ShiftUpdate_Picker.SelectedDate.Value.ToString("d");
-            //s.newshiftdate = tomsg;
-            //this.Close();
             return tomsg;
         }
 
@@ -51,7 +38,6 @@ namespace Hospital_Panel
         private void SaveUpdatedDate_Click(object sender, RoutedEventArgs e)
         {
             string selected_date = GetNewDate();
-            //MessageBox.Show(selected_date);
             string selected_listbox = sh.ListBox.SelectedItem.ToString();
             sh.Update_Date(selected_date);
         }

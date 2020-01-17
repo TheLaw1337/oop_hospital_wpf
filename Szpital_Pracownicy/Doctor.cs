@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 
 namespace Szpital_Pracownicy
@@ -15,16 +10,11 @@ namespace Szpital_Pracownicy
 
         public int PWZnumber;
 
-        //private string Function;
-        //public static int Number;
-        //public static string No_num; // No. - liczba porządkowa
         private int Shifts;
-
 
         public Doctor()
         {
         }
-
 
         public Doctor(string newSurname, string newName, long newPesel, string newSpecialty, int newPWZnumber,
             string newPassword) : base(newSurname, newName, newPesel, newPassword)

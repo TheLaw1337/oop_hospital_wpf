@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Collections;
 using System.Windows.Controls.Primitives;
 using Szpital_Pracownicy;
 
@@ -33,8 +22,6 @@ namespace Hospital_Panel
         {
             InitializeComponent();
             FillList();
-            //MessageBox.Show(mw.loggeduser_function);
-            //ButtonFilter();
         }
 
         private void AddShift_Click(object sender, RoutedEventArgs e)
@@ -55,16 +42,12 @@ namespace Hospital_Panel
         {
             string text;
             list = MainWindow.Deserialize();
-            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
                 text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
-                //itemsList.Add(text);
                 cb_ShiftWorkersList.Items.Add(text);
             }
-
-            //ListBox.ItemsSource = itemsList;
         }
 
         public void ButtonFilter()
@@ -93,7 +76,6 @@ namespace Hospital_Panel
 
             string text;
             list = MainWindow.Deserialize();
-            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
@@ -101,8 +83,6 @@ namespace Hospital_Panel
                 if (text.Equals(test))
                 {
                     ListBox.Items.Clear();
-
-                    //ListBox.ItemsSource = record.shift_list;
 
                     foreach (var item in record.shift_list)
                     {
@@ -115,12 +95,6 @@ namespace Hospital_Panel
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            //int index = cb_ShiftWorkersList.SelectedIndex;
-            //string date = ListBox.SelectedItem.ToString();
-
-
-            //NewShift ns = new NewShift();
-            //ns.Update(index, date);
             if (ListBox.SelectedIndex < 0)
             {
                 MessageBox.Show("Select the shift first!");
@@ -129,7 +103,6 @@ namespace Hospital_Panel
             {
                 UpdateShift us = new UpdateShift(this);
                 us.Update();
-                //MessageBox.Show(newshiftdate);
             }
         }
 
@@ -163,7 +136,6 @@ namespace Hospital_Panel
                         {
                             item.date = new_date;
                             mw.Serialize_NewShift(list);
-                            //done = true;
                             break;
                         }
 
@@ -172,11 +144,6 @@ namespace Hospital_Panel
                             break;
                         }
                     }
-
-                    //if (done.Equals(true))
-                    //{
-                    //    break;
-                    //}
                 }
             }
         }

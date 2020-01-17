@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using Szpital_Pracownicy;
 
 namespace Hospital_Panel
 {
@@ -13,13 +8,6 @@ namespace Hospital_Panel
         public ID_Operations(String filename)
         {
         }
-        //public void SaveID(string path)
-        //{
-        //    using (StreamWriter plik = new StreamWriter(path))
-        //    {
-        //        //plik.WriteLine(Doctor.Number);
-        //    }
-        //}
 
         public int GetID(string path)
         {

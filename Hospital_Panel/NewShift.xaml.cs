@@ -1,19 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Szpital_Pracownicy;
-using System.Collections;
-using System.Windows.Controls.Primitives;
 
 namespace Hospital_Panel
 {
@@ -37,7 +25,6 @@ namespace Hospital_Panel
         {
             string text = null;
             list = MainWindow.Deserialize();
-            //ArrayList itemsList = new ArrayList();
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
@@ -47,8 +34,6 @@ namespace Hospital_Panel
                     cb_WorkersList.Items.Add(text);
                 }
             }
-
-            //ListBox.ItemsSource = itemsList;
         }
 
         private void SaveShift_Click(object sender, RoutedEventArgs e)
@@ -57,10 +42,6 @@ namespace Hospital_Panel
             DateTime shiftDate = DatePick.SelectedDate.Value.Date;
             bool val_result;
 
-            //list.ListOfWorkers[index].shift_list.Add(shiftDate);
-            //mw.Serialize();
-
-            //int index = ListBox.Items.IndexOf(ListBox.SelectedItem);
             string surname, name;
             long pesel;
             surname = list.ListOfWorkers[index].Surname;
@@ -91,7 +72,6 @@ namespace Hospital_Panel
                         mw.Serialize_NewShift(list);
                     }
                 }
-
                 this.Close();
             }
         }

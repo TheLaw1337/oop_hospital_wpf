@@ -1,19 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Szpital_Pracownicy;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -29,10 +15,7 @@ namespace Hospital_Panel
         public static WorkersList workersList = Deserialize();
 
         Login log = new Login();
-
-        //Shifts shifts = new Shifts();
         public string loggeduser_function;
-
 
         public MainWindow()
         {
@@ -47,7 +30,6 @@ namespace Hospital_Panel
             Button_Filter();
         }
 
-
         private void Button_Filter()
         {
             if (loggeduser_function.Equals("Doctor") || loggeduser_function.Equals("Nurse"))
@@ -57,7 +39,6 @@ namespace Hospital_Panel
                 this.AdminAdd.IsEnabled = false;
             }
         }
-
 
         private void AddDoctor_Click(object sender, RoutedEventArgs e)
         {
@@ -70,7 +51,6 @@ namespace Hospital_Panel
             AddNurse nn = new AddNurse();
             nn.Show();
         }
-
         private void AddAdmin_Click(object sender, RoutedEventArgs e)
         {
             AddAdmin aa = new AddAdmin();
@@ -86,14 +66,12 @@ namespace Hospital_Panel
                 lw.Refresh.IsEnabled = false;
                 lw.DeleteWorker.IsEnabled = false;
             }
-
             lw.Show();
         }
 
         private void Shifts_Click(object sender, RoutedEventArgs e)
         {
             Shifts sh = new Shifts();
-            //MessageBox.Show(this.loggeduser_function);
             if (this.loggeduser_function.Equals("Doctor") || this.loggeduser_function.Equals("Nurse"))
             {
                 sh.AddShift.IsEnabled = false;
@@ -101,7 +79,6 @@ namespace Hospital_Panel
                 sh.UpdateShift.IsEnabled = false;
                 sh.DeleteShift.IsEnabled = false;
             }
-
             sh.Show();
         }
 
@@ -123,7 +100,6 @@ namespace Hospital_Panel
                 list.ListOfWorkers = newList;
                 MessageBox.Show("List not found - new list created, will be saved during this session");
             }
-
             return list;
         }
 
@@ -148,7 +124,6 @@ namespace Hospital_Panel
             Serialize(workersList);
         }
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
         }
@@ -157,7 +132,5 @@ namespace Hospital_Panel
         {
             Serialize(l);
         }
-
-        
     }
 }
