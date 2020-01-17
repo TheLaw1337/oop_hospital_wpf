@@ -30,7 +30,8 @@ namespace Hospital_Panel
         {
             InitializeComponent();
             FillList();
-            ButtonFilter();
+            //MessageBox.Show(mw.loggeduser_function);
+            //ButtonFilter();
         }
 
         private void AddShift_Click(object sender, RoutedEventArgs e)
