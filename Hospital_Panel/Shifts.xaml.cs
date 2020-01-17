@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections;
+using System.Windows.Controls.Primitives;
 using Szpital_Pracownicy;
+
 
 namespace Hospital_Panel
 {
@@ -78,8 +80,11 @@ namespace Hospital_Panel
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
+            int cb_index = cb_ShiftWorkersList.SelectedIndex;
             cb_ShiftWorkersList.Items.Clear();
+            ListBox.Items.Clear();
             FillList();
+            cb_ShiftWorkersList.SelectedIndex = cb_index;
         }
 
         private void cb_ShiftWorkersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -195,6 +200,7 @@ namespace Hospital_Panel
                         break;
                 }
             }
+            
         }
 
         public void DeleteDate()
@@ -212,6 +218,7 @@ namespace Hospital_Panel
             }
 
             mw.Serialize_NewShift(list);
+            Refresh.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
     }
 }

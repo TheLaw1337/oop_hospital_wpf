@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Szpital_Pracownicy;
 using System.Collections;
+using System.Windows.Controls.Primitives;
 
 namespace Hospital_Panel
 {
