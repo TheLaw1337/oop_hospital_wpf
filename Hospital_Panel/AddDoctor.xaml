@@ -16,7 +16,7 @@
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
             <TextBox Name="txtName" Margin="0,0,10,0" />
             <Label Content="_PESEL:" Target="{Binding ElementName=txtPesel}" />
-            <TextBox Name="txtPesel" MaxLength="11" Margin="0,0,10,0" />
+            <TextBox Name="txtPesel" PreviewTextInput="NumberValidationTextBox" MaxLength="11" Margin="0,0,10,0" />
             <Label Content="_PWZ Number:" Target="{Binding ElementName=txtPWZ}" />
             <TextBox Name="txtPWZ" MaxLength="7" Margin="0,0,10,0" />
             <Label Content="_Specialty:" Target="{Binding ElementName=cb_Spec}" />

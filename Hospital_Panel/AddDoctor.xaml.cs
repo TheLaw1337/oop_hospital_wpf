@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Szpital_Pracownicy;
+using System.Text.RegularExpressions;
 
 namespace Hospital_Panel
 {
@@ -45,6 +46,12 @@ namespace Hospital_Panel
             txtSurname.Text = surname;
             txtName.Text = name;
             txtPesel.Text = pesel;
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
