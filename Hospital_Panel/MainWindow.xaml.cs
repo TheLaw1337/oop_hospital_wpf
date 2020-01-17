@@ -77,6 +77,12 @@ namespace Hospital_Panel
         private void ShowWorkers_Click(object sender, RoutedEventArgs e)
         {
             ListWorkers lw = new ListWorkers();
+            if (this.loggeduser_function.Equals("Doctor") || this.loggeduser_function.Equals("Nurse"))
+            {
+                lw.UpdateWorker.IsEnabled = false;
+                lw.Refresh.IsEnabled = false;
+                lw.DeleteWorker.IsEnabled = false;
+            }
             lw.Show();
         }
 

@@ -37,7 +37,7 @@ namespace Szpital_Pracownicy
 
         public override string GetWorkerData()
         {
-            return $"{this.Surname}, {this.Name}, {this.Pesel}, {this.Specialty}, {this.PWZnumber}, {this.Username}, {No_num}";
+            return $"{this.Surname}, {this.Name}, {this.Pesel}, {this.Specialty}, {this.PWZnumber}, {this.Username}";
         }
 
     }
