@@ -89,7 +89,7 @@ namespace Hospital_Panel
         private void Shifts_Click(object sender, RoutedEventArgs e)
         {
             Shifts sh = new Shifts();
-            MessageBox.Show(this.loggeduser_function);
+            //MessageBox.Show(this.loggeduser_function);
             if (this.loggeduser_function.Equals("Doctor") || this.loggeduser_function.Equals("Nurse"))
             {
                 sh.AddShift.IsEnabled = false;

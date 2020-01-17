@@ -110,9 +110,16 @@ namespace Hospital_Panel
 
             //NewShift ns = new NewShift();
             //ns.Update(index, date);
-            UpdateShift us = new UpdateShift(this);
-            us.Update();
-            //MessageBox.Show(newshiftdate);
+            if (ListBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select the shift first!");
+            }
+            else
+            {
+                UpdateShift us = new UpdateShift(this);
+                us.Update();
+                //MessageBox.Show(newshiftdate);
+            }
         }
 
         public void Update_Date(string d)
@@ -158,6 +165,41 @@ namespace Hospital_Panel
                     //}
                 }
             }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select the shift first!");
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure to delete this shift?", "Confirm delete operation", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        DeleteDate();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
+            }
+        }
+        public void DeleteDate()
+        {
+            string cb_text;
+            object test = cb_ShiftWorkersList.SelectedItem;
+            int selected_listbox = ListBox.SelectedIndex;
+            foreach (var record in list.ListOfWorkers)
+            {
+                cb_text = $"Shifts: {record.shift_list.Count} | {record.GetFunction()} | {record.GetWorkerData()} ";
+                if (cb_text.Equals(test))
+                {
+                    record.shift_list.RemoveAt(selected_listbox);
+                }
+            }
+            mw.Serialize_NewShift(list);
         }
     }
 }
