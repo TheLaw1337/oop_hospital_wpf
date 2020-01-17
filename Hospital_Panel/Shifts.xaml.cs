@@ -22,6 +22,7 @@ namespace Hospital_Panel
     public partial class Shifts : Window
     {
         MainWindow mw = new MainWindow();
+        
         static WorkersList list = new WorkersList();
         public string newshiftdate;
         NewShift ns = new NewShift();
@@ -29,6 +30,7 @@ namespace Hospital_Panel
         {
             InitializeComponent();
             FillList();
+            ButtonFilter();
         }
 
         private void AddShift_Click(object sender, RoutedEventArgs e)
@@ -52,6 +54,18 @@ namespace Hospital_Panel
             }
 
             //ListBox.ItemsSource = itemsList;
+        }
+
+        public void ButtonFilter()
+        {
+            
+            if (mw.loggeduser_function.Equals("Doctor") || mw.loggeduser_function.Equals("Nurse"))
+            {
+                AddShift.IsEnabled = false;
+                Refresh.IsEnabled = false;
+                UpdateShift.IsEnabled = false;
+                DeleteShift.IsEnabled = false;
+            }
         }
 
         private void Refresh_Click(object sender, RoutedEventArgs e)

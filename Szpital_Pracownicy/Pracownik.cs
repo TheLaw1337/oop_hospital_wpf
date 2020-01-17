@@ -27,7 +27,7 @@ namespace Szpital_Pracownicy
             Name = newName;
             Pesel = newPesel;
             Username = newSurname.Substring(0, 1).ToLower() + "." + newName.ToLower();
-            Password = "password";
+            Password = newPassword;
         }
 
         public Pracownik()

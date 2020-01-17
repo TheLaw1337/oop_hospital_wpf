@@ -17,9 +17,9 @@
             Other operations:
         </TextBlock>
         <StackPanel HorizontalAlignment="Left" Margin="75,150,0,115">
-            <Button Width="150" Height="30" Click="AddDoctor_Click">Doctor</Button>
-            <Button Width="150" Height="30" Click="AddNurse_Click">Nurse</Button>
-            <Button Width="150" Height="30" Click="AddAdmin_Click">Admin</Button>
+            <Button Width="150" Height="30" Click="AddDoctor_Click" Name="DoctorAdd">Doctor</Button>
+            <Button Width="150" Height="30" Click="AddNurse_Click" Name="NurseAdd">Nurse</Button>
+            <Button Width="150" Height="30" Click="AddAdmin_Click" Name="AdminAdd">Admin</Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Margin="476,150,0,115">
             <Button Width="150" Height="30" Click="Shifts_Click">Shifts</Button>

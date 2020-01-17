@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,9 +27,32 @@ namespace Hospital_Panel
 
         public static List<Pracownik> workers = new List<Pracownik>();
         public static WorkersList workersList = Deserialize();
+        Login log = new Login();
+        //Shifts shifts = new Shifts();
+        public string loggeduser_function;
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        public MainWindow(Login l)
+        {
+            InitializeComponent();
+            this.log = l;
+            loggeduser_function = log.loggeduser_function;
+            Button_Filter();
+        }
+
+        
+        private void Button_Filter()
+        {
+            if (loggeduser_function.Equals("Doctor") || loggeduser_function.Equals("Nurse"))
+            {
+                this.DoctorAdd.IsEnabled = false;
+                this.NurseAdd.IsEnabled = false;
+                this.AdminAdd.IsEnabled = false;
+            }
         }
 
         

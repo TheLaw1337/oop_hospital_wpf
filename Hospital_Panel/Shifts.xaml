@@ -11,10 +11,10 @@
             Shifts
         </TextBlock>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="15,54,0,302">
-            <Button Width="120" Height="30" Click="AddShift_Click">Add new shift</Button>
-            <Button Width="120" Height="30" Click="Refresh_Click">Refresh</Button>
-            <Button Width="120" Height="30" Click="Update_Click">Update shift data</Button>
-            <Button Width="150" Height="30" >Delete worker data</Button>
+            <Button Width="120" Height="30" Click="AddShift_Click" Name="AddShift">Add new shift</Button>
+            <Button Width="120" Height="30" Click="Refresh_Click" Name="Refresh">Refresh</Button>
+            <Button Width="120" Height="30" Click="Update_Click" Name="UpdateShift">Update shift data</Button>
+            <Button Width="150" Height="30" Name="DeleteShift">Delete shift data</Button>
         </StackPanel>
         <ComboBox Name="cb_ShiftWorkersList"  SelectionChanged="cb_ShiftWorkersList_SelectionChanged" Margin="30,117,38,0" Height="35" VerticalAlignment="Top">
 
