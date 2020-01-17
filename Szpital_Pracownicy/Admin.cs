@@ -15,7 +15,7 @@ namespace Szpital_Pracownicy
         {
         }
 
-        public Admin(string newName, string newSurname, long newPesel, string newPassword) : base(newSurname, newName,
+        public Admin(string newSurname, string newName, long newPesel, string newPassword) : base(newSurname, newName,
             newPesel, newPassword)
         {
             Number++;

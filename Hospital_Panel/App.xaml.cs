@@ -15,7 +15,6 @@ namespace Hospital_Panel
     {
         public App()
         {
-            ShutdownMode = ShutdownMode.OnExplicitShutdown;
         }
 
     }
