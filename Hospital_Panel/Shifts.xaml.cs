@@ -37,8 +37,16 @@ namespace Hospital_Panel
 
         private void AddShift_Click(object sender, RoutedEventArgs e)
         {
-            NewShift ns = new NewShift();
-            ns.Show();
+            if (cb_ShiftWorkersList.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select the worker first!");
+            }
+            else
+            {
+                NewShift ns = new NewShift();
+                ns.cb_WorkersList.SelectedIndex = cb_ShiftWorkersList.SelectedIndex;
+                ns.Show();
+            }
         }
 
         private void FillList()
