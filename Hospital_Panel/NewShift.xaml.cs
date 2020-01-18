@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using Szpital_Pracownicy;
 
 namespace Hospital_Panel
@@ -28,11 +29,11 @@ namespace Hospital_Panel
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
-                if (record.Function == "Doctor" || record.Function == "Nurse")
-                {
+                //if (record.Function == "Doctor" || record.Function == "Nurse")
+                //{
                     text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
                     cb_WorkersList.Items.Add(text);
-                }
+                //}
             }
         }
 
@@ -75,6 +76,7 @@ namespace Hospital_Panel
                         mw.Serialize_NewShift(list);
                     }
                 }
+                MessageBox.Show("Shift added - please refresh list");
                 this.Close();
             }
         }
