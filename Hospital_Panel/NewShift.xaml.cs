@@ -29,11 +29,8 @@ namespace Hospital_Panel
 
             foreach (Pracownik record in list.ListOfWorkers)
             {
-                //if (record.Function == "Doctor" || record.Function == "Nurse")
-                //{
-                    text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
-                    cb_WorkersList.Items.Add(text);
-                //}
+                text = $"{record.GetFunction()} | {record.GetWorkerData()} ";
+                cb_WorkersList.Items.Add(text);
             }
         }
 
@@ -133,13 +130,12 @@ namespace Hospital_Panel
                         }
                     }
                 }
-
-                if (crit2_count.Equals(0))
-                {
-                    crit2 = true;
-                }
             }
 
+            if (crit2_count.Equals(0))
+            {
+                crit2 = true;
+            }
             if (crit1.Equals(true) && crit2.Equals(true))
             {
                 val_ok = true;
