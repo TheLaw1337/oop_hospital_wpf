@@ -48,7 +48,10 @@ namespace Hospital_Panel
             name = list.ListOfWorkers[index].Name;
             pesel = list.ListOfWorkers[index].Pesel;
             string function = list.ListOfWorkers[index].GetFunction();
-            specialty = list.ListOfWorkers[index].GetSpec(list.ListOfWorkers[index]);
+            if (function.Equals("Doctor"))
+            {
+                specialty = list.ListOfWorkers[index].GetSpec(list.ListOfWorkers[index]);
+            }
             List<Shift> shiftlist = list.ListOfWorkers[index].shift_list;
             val_result = ShiftValidate(shiftlist, shiftDate);
 
