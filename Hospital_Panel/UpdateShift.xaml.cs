@@ -40,6 +40,7 @@ namespace Hospital_Panel
             string selected_date = GetNewDate();
             string selected_listbox = sh.ListBox.SelectedItem.ToString();
             sh.Update_Date(selected_date);
+            this.Close();
         }
     }
 }

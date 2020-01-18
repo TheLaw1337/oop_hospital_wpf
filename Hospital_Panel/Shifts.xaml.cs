@@ -136,6 +136,7 @@ namespace Hospital_Panel
                         {
                             item.date = new_date;
                             mw.Serialize_NewShift(list);
+                            Refresh.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                             break;
                         }
 
